@@ -1,0 +1,22 @@
+{
+  "name": "OpenPlatform",
+  "version": "1.0.0",
+  "description": "OpenPlatform application",
+  "main": "main.js",
+  "openplatform": "https://openplatform.totaljs.com",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/totaljs/openplatform-electron",
+  "keywords": [
+    "openplatform"
+  ],
+  "author": "Peter Širka",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  },
+  "dependencies": {
+    "electron-window-state": "^4.1.1"
+  }
+}
