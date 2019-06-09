@@ -25,6 +25,14 @@ electron.ipcMain.on('getPath', function(e, arg) {
 	e.returnValue = cache[arg.url] || '';
 });
 
+electron.ipcMain.on('setBadge', function(e, arg) {
+	app.dock.setBadge(arg.count + '');
+});
+
+electron.ipcMain.on('setTitle', function(e, title) {
+	mainWindow && mainWindow.setTitle(title);
+});
+
 global.META = {
 	version: 1
 };
@@ -45,6 +53,10 @@ function createWindow () {
 	window.on('closed', function () {
 		if (mainWindow == this)
 			mainWindow = null;
+	});
+
+	window.on('focus', function() {
+		app.dock.setBadge('');
 	});
 
 	window.webContents.on('new-window', function(e, url, frameName, disposition, options) {
