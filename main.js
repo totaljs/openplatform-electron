@@ -6,8 +6,8 @@ var open = require('open');
 const path = require('path');
 const cache = {};
 const { Menu } = require('electron');
-const meta = require('./package.json');
 
+app.disableHardwareAcceleration();
 let mainWindow;
 
 module.paths.push(path.resolve('node_modules'));
